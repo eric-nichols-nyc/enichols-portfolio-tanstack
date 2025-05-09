@@ -34,7 +34,7 @@ const projects: Project[] = [
       'MoodFlix is your personal movie recommendation engine that suggests films based on your current mood. Whether you\'re feeling energetic, relaxed, or somewhere in between, we\'ve got the perfect movie for you.',
     shortDescription: 'Personal movie recommendation engine.',
     date: '2023-05-15',
-    url: 'https://moodflix.vercel.app/',
+    url: 'https://moodflix-phi.vercel.app/',
     published: true,
     image: '/images/moodflix.png',
   },
