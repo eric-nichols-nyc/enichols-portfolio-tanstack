@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-router'
 
 import appCss from "@/styles/app.css?url"
-import Sidebar from "@/components/sidebar"
+import Sidebar from "@/components/Sidebar"
 
 
 export const Route = createRootRoute({
