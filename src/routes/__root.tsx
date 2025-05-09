@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-router'
 
 import appCss from "@/styles/app.css?url"
-import Sidebar from "@/components/Sidebar"
+import Sidebar from "@/components/sidebar"
 
 
 export const Route = createRootRoute({
@@ -22,7 +22,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Eric Nichols Developer',
       },
     ],
     links: [
@@ -50,12 +50,12 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <div className="flex min-h-screen">
+        <main className="flex min-h-screen">
           <Sidebar />
           <div className="flex-1 border border-red-500">
             {children}
           </div>
-        </div>
+        </main>
         <Scripts />
       </body>
     </html>

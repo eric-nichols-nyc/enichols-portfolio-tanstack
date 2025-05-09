@@ -2,7 +2,8 @@
 import * as fs from 'node:fs'
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-
+import HomePage from '@/components/home'
+import ContentContainer from '@/components/content-container'
 const filePath = 'count.txt'
 
 async function readCount() {
@@ -34,15 +35,8 @@ function Home() {
   const state = Route.useLoaderData()
 
   return (
-    <button
-      type="button"
-      onClick={() => {
-        updateCount({ data: 1 }).then(() => {
-          router.invalidate()
-        })
-      }}
-    >
-      Add 1 to {state}?
-    </button>
+    <ContentContainer>
+      <HomePage />
+    </ContentContainer>
   )
 }

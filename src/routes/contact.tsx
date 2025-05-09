@@ -5,5 +5,9 @@ export const Route = createFileRoute('/contact')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/contact"!</div>
+  return (
+    <div>
+      <img src="/images/contact.png" alt="Contact" />
+    </div>
+  )
 }
