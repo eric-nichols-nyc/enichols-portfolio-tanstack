@@ -27,7 +27,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
       <div className="flex justify-between items-center mt-auto">
-        <a href={project.learnMoreUrl || '#'} className="text-[#b3b0b7] text-sm hover:underline">Learn more →</a>
         <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-[#a78bfa] text-sm hover:underline flex items-center gap-1">Visit site <svg xmlns='http://www.w3.org/2000/svg' className='inline w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 7l-10 10m0 0h6m-6 0V11' /></svg></a>
       </div>
     </div>
