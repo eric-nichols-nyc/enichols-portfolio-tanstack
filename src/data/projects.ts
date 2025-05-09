@@ -13,19 +13,6 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    id: 'trellnode',
-    title: 'Trellnode',
-    tags: ['api', 'ai', 'aws', 'postgres'],
-    categories: ['ai'],
-    description:
-      'Trellnode is a platform that allows you to create and manage your tasks. It uses AI to generate tasks and then allows you to manage them.',
-    shortDescription: 'Trellnode is a platform that allows you to create and manage your tasks.',
-    date: '2023-04-01',
-    url: 'https://trellnode.vercel.app/',
-    published: true,
-    image: '/images/trellnode.png',
-  },
-  {
     id: 'x2j9v7lm',
     title: 'MoodFlix',
     tags: ['collaboration', 'websocket', 'typescript'],
@@ -63,6 +50,19 @@ const projects: Project[] = [
     url: 'https://ai-taskmaster-dashboard.vercel.app/',
     published: true,
     image: '/images/taskmaster.png',
+  },
+  {
+    id: 'trellnode',
+    title: 'Trellnode',
+    tags: ['api', 'ai', 'aws', 'postgres'],
+    categories: ['ai'],
+    description:
+      'Trellnode is a platform that allows you to create and manage your tasks. It uses AI to generate tasks and then allows you to manage them.',
+    shortDescription: 'Trellnode is a platform that allows you to create and manage your tasks.',
+    date: '2023-04-01',
+    url: 'https://trellnode.vercel.app/',
+    published: true,
+    image: '/images/trellnode.png',
   },
   {
     id: 'smart-headphones-ai',
