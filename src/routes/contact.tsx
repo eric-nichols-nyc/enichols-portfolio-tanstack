@@ -12,6 +12,7 @@ export const Route = createFileRoute('/contact')({
 });
 
 export default function RouteComponent() {
+ ;
   return (
     <ContentContainer>
     <div className="flex flex-col items-center pt-16 min-h-screen justify-center">
