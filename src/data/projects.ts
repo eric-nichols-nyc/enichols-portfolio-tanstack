@@ -9,6 +9,7 @@ export interface Project {
   url: string
   published: boolean
   image: string
+  gallery: string[]
 }
 
 const projects: Project[] = [
@@ -24,6 +25,11 @@ const projects: Project[] = [
     url: 'https://moodflix-phi.vercel.app/',
     published: true,
     image: '/images/moodflix.png',
+    gallery: [
+      '/images/moodflix.png',
+      '/images/moodflix-2.png',
+      '/images/moodflix-3.png',
+    ],
   },
   {
     id: 'q4w8e1rt',
@@ -37,6 +43,11 @@ const projects: Project[] = [
     url: 'https://audiograph.vercel.app/',
     published: true,
     image: '/images/audiograph.png',
+    gallery: [
+      '/images/audiograph.png',
+      '/images/moodflix-2.png',
+      '/images/moodflix-3.png',
+    ],
   },
   {
     id: 'ai-taskmaster',
@@ -50,6 +61,11 @@ const projects: Project[] = [
     url: 'https://ai-taskmaster-dashboard.vercel.app/',
     published: true,
     image: '/images/taskmaster.png',
+    gallery: [
+      '/images/taskmaster.png',
+      '/images/moodflix-2.png',
+      '/images/moodflix-3.png',
+    ],
   },
   {
     id: 'trellnode',
@@ -63,6 +79,11 @@ const projects: Project[] = [
     url: 'https://trellnode.vercel.app/',
     published: true,
     image: '/images/trellnode.png',
+    gallery: [
+      '/images/trellnode.png',
+        '/images/trellnode-2.png',
+        '/images/trellnode-3.png',
+    ],
   },
   {
     id: 'smart-headphones-ai',
@@ -76,6 +97,7 @@ const projects: Project[] = [
     url: 'https://smart-headphones-ai.vercel.app/',
     published: true,
     image: '/images/smart-headphones-ai.png',
+    gallery: [],
   },
   {
     id: 'ai-mockmaster',
@@ -89,6 +111,7 @@ const projects: Project[] = [
     url: 'https://ai-mockmaster.vercel.app/',
     published: true,
     image: '/images/mockmaster.png',
+    gallery: [],
   },
 ]
 
