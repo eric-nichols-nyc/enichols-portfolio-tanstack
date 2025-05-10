@@ -25,11 +25,7 @@ const projects: Project[] = [
     url: 'https://moodflix-phi.vercel.app/',
     published: true,
     image: '/images/moodflix.png',
-    gallery: [
-      '/images/moodflix.png',
-      '/images/moodflix-2.png',
-      '/images/moodflix-3.png',
-    ],
+    gallery: [],
   },
   {
     id: 'q4w8e1rt',
@@ -43,11 +39,7 @@ const projects: Project[] = [
     url: 'https://audiograph.vercel.app/',
     published: true,
     image: '/images/audiograph.png',
-    gallery: [
-      '/images/audiograph.png',
-      '/images/moodflix-2.png',
-      '/images/moodflix-3.png',
-    ],
+    gallery: [],
   },
   {
     id: 'ai-taskmaster',
@@ -61,11 +53,7 @@ const projects: Project[] = [
     url: 'https://ai-taskmaster-dashboard.vercel.app/',
     published: true,
     image: '/images/taskmaster.png',
-    gallery: [
-      '/images/taskmaster.png',
-      '/images/moodflix-2.png',
-      '/images/moodflix-3.png',
-    ],
+    gallery: [],
   },
   {
     id: 'trellnode',
@@ -79,11 +67,7 @@ const projects: Project[] = [
     url: 'https://trellnode.vercel.app/',
     published: true,
     image: '/images/trellnode.png',
-    gallery: [
-      '/images/trellnode.png',
-        '/images/trellnode-2.png',
-        '/images/trellnode-3.png',
-    ],
+    gallery: [],
   },
   {
     id: 'smart-headphones-ai',
@@ -94,7 +78,7 @@ const projects: Project[] = [
       'Smart Headphones AI is a platform that allows you to search for headphones and get recommendations based on your preferences.',
     shortDescription: 'Search for headphones and get recommendations.',
     date: '2023-08-05',
-    url: 'https://smart-headphones-ai.vercel.app/',
+    url: 'https://my-smart-headphones-ai-25.vercel.app/',
     published: true,
     image: '/images/smart-headphones-ai.png',
     gallery: [],

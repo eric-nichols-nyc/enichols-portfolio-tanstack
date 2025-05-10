@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ExperienceImport } from './routes/experience'
 import { Route as ContactImport } from './routes/contact'
 import { Route as PathlessLayoutImport } from './routes/_pathlessLayout'
 import { Route as IndexImport } from './routes/index'
@@ -18,6 +19,12 @@ import { Route as ProjectsIndexImport } from './routes/projects/index'
 import { Route as ProjectsProjectIdImport } from './routes/projects/$projectId'
 
 // Create/Update Routes
+
+const ExperienceRoute = ExperienceImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ContactRoute = ContactImport.update({
   id: '/contact',
@@ -73,6 +80,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceImport
+      parentRoute: typeof rootRoute
+    }
     '/projects/$projectId': {
       id: '/projects/$projectId'
       path: '/projects/$projectId'
@@ -96,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -104,6 +119,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -113,20 +129,34 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_pathlessLayout': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '' | '/contact' | '/projects/$projectId' | '/projects'
+  fullPaths:
+    | '/'
+    | ''
+    | '/contact'
+    | '/experience'
+    | '/projects/$projectId'
+    | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '' | '/contact' | '/projects/$projectId' | '/projects'
+  to:
+    | '/'
+    | ''
+    | '/contact'
+    | '/experience'
+    | '/projects/$projectId'
+    | '/projects'
   id:
     | '__root__'
     | '/'
     | '/_pathlessLayout'
     | '/contact'
+    | '/experience'
     | '/projects/$projectId'
     | '/projects/'
   fileRoutesById: FileRoutesById
@@ -136,6 +166,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PathlessLayoutRoute: typeof PathlessLayoutRoute
   ContactRoute: typeof ContactRoute
+  ExperienceRoute: typeof ExperienceRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
@@ -144,6 +175,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PathlessLayoutRoute: PathlessLayoutRoute,
   ContactRoute: ContactRoute,
+  ExperienceRoute: ExperienceRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
@@ -161,6 +193,7 @@ export const routeTree = rootRoute
         "/",
         "/_pathlessLayout",
         "/contact",
+        "/experience",
         "/projects/$projectId",
         "/projects/"
       ]
@@ -173,6 +206,9 @@ export const routeTree = rootRoute
     },
     "/contact": {
       "filePath": "contact.tsx"
+    },
+    "/experience": {
+      "filePath": "experience.tsx"
     },
     "/projects/$projectId": {
       "filePath": "projects/$projectId.tsx"

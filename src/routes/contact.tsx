@@ -3,7 +3,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { createFileRoute } from '@tanstack/react-router';
 import ContentContainer from '@/components/content-container';
 
@@ -25,21 +25,6 @@ export default function RouteComponent() {
           <div className="mb-6">
             <div className="text-lg font-semibold mb-2 text-white">Get in Touch</div>
             <div className="text-xs text-muted-foreground mb-4">Have something to discuss? Send me a message and let's talk.</div>
-            <form className="space-y-4">
-              <div>
-                <Label htmlFor="name">Your Name</Label>
-                <Input id="name" placeholder="Your Name" className="mt-1" />
-              </div>
-              <div>
-                <Label htmlFor="email">Your Email</Label>
-                <Input id="email" type="email" placeholder="Your Email" className="mt-1" />
-              </div>
-              <div>
-                <Label htmlFor="message">Your Message</Label>
-                <Textarea id="message" placeholder="Your Message" className="mt-1" />
-              </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-[#a78bfa] to-[#b983ff] text-white mt-2">Send Message</Button>
-            </form>
           </div>
           <div className="bg-[#18181b] rounded-lg p-4 mt-4">
             <div className="font-semibold text-white mb-2 text-sm flex items-center gap-2">
@@ -60,6 +45,11 @@ export default function RouteComponent() {
                 <FaGithub className="text-[#b3b0b7]" />
                 <span className="flex-1">Github</span>
                 <span className="text-xs text-muted-foreground">@eric-nichols-nyc</span>
+              </a>
+              <a href="mailto:ebn646@gmail.com" className="flex items-center gap-3 rounded-md px-3 py-2 bg-[#232225] hover:bg-[#2d2d31] transition text-white">
+                <FaEnvelope className="text-[#b983ff]" />
+                <span className="flex-1">Email</span>
+                <span className="text-xs text-muted-foreground">ebn646@gmail.com</span>
               </a>
             </div>
           </div>

@@ -1,5 +1,14 @@
 @import "tailwindcss" source("../");
 
+.bg-primary {
+  background-color: oklch(0.92 0.004 286.32);
+}
+
+.bg-primary-20 {
+  background-color: #ffffff1a;
+}
+
+
 * {
     @apply border-gray-200 dark:border-gray-800;
   }
