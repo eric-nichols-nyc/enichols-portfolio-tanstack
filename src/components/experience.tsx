@@ -41,7 +41,7 @@ export default function VerticalEventTimeline() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Project Timeline
+        Experience Timeline
       </motion.h1>
 
       <motion.p
@@ -50,14 +50,14 @@ export default function VerticalEventTimeline() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Our development journey and milestones
+        My journey and milestones
       </motion.p>
 
       <div className="relative">
         {/* Timeline line */}
         <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-primary-20 z-0"></div>
 
-        {events.map((item, index) => (
+        {events.reverse().map((item, index) => (
           <motion.div
             key={index}
             className={`mb-12 relative z-10 flex flex-col ${
