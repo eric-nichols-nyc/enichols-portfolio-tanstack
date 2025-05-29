@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Briefcase, MapPin, Star, Sparkles } from 'lucide-react';
+import { ChevronDown, Briefcase, MapPin, Star, Sparkles, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/shine-card';
 import { Badge } from '@/components/ui/badge';
 import { careerTimeline } from '@/data/career';
 import { ShineBorder } from './ui/shine-border';
+import { GradientText } from './ui/gradient-text';
 
 export default function CareerTimeline() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
@@ -31,7 +32,7 @@ export default function CareerTimeline() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Developer Career Quest
+        <GradientText>My Developer Journey</GradientText>
       </motion.h1>
 
       <motion.p
@@ -63,9 +64,9 @@ export default function CareerTimeline() {
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10 flex items-center justify-center">
                 {item.isCurrent ? (
-                  <Sparkles className="w-4 h-4 text-yellow-400" />
+                  <Sparkles className="w-4 h-4 text-purple-accent" />
                 ) : (
-                  <Star className="w-4 h-4 text-white" />
+                  <Star className="w-4 h-4 text-purple-accent" />
                 )}
               </div>
 
@@ -75,13 +76,13 @@ export default function CareerTimeline() {
                   index % 2 === 0 ? 'md:justify-end md:pr-8' : 'md:justify-start md:pl-8'
                 }`}
               >
-                <motion.div className="mb-4 md:mb-0" whileHover={{ scale: 1.05 }}>
+                <motion.div className="mb-4 md:mb-0">
                   <Badge
                     variant="outline"
-                    className="text-sm py-1 px-3 bg-primary/5 border-primary/20"
+                    className="text-sm py-1 px-3 "
                   >
-                    <Briefcase className="w-4 h-4 mr-1" />
-                    {item.period} {item.year}
+                    <Calendar className="w-4 h-4 mr-1" />
+                    {item.year}
                   </Badge>
                 </motion.div>
               </div>
@@ -104,7 +105,7 @@ export default function CareerTimeline() {
                       >
                         <div>
                           <h3 className="text-xl font-bold text-primary">
-                            {item.title} @ {item.company}
+                            {item.title} @ <span className="text-purple-accent font-bold">{item.company}</span>
                           </h3>
                           <p className="text-lg font-medium flex items-center">
                             <MapPin className="w-4 h-4 mr-1 text-muted-foreground" />
@@ -114,7 +115,7 @@ export default function CareerTimeline() {
                             {item.skills.map((skill, i) => (
                               <Badge
                                 key={i}
-                                className="bg-blue-100 text-blue-700 border-blue-200 text-xs"
+                                className="bg-purple-accent text-black border-purple-accent text-xs"
                               >
                                 {skill}
                               </Badge>
@@ -122,7 +123,7 @@ export default function CareerTimeline() {
                           </div>
                           {item.isCurrent && (
                             <div className="mt-2 text-green-600 font-semibold text-sm">
-                              Current Role
+                              Latest Role
                             </div>
                           )}
                         </div>
@@ -146,7 +147,7 @@ export default function CareerTimeline() {
                             <div className="px-6 pb-6 pt-2 border-t border-border/50">
                               <div className="mb-4">
                                 <h4 className="text-sm font-semibold flex items-center mb-2">
-                                  <Sparkles className="w-4 h-4 mr-2 text-primary" />
+                                  <Sparkles className="w-4 h-4 mr-2 text-purple-accent" />
                                   Fun Highlights
                                 </h4>
                                 <ul className="grid grid-cols-1 gap-2">

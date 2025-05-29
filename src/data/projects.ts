@@ -70,17 +70,17 @@ const projects: Project[] = [
     gallery: [],
   },
   {
-    id: 'smart-headphones-ai',
-    title: 'smart-headphones-ai',
+    id: 'ai-recipe-generator',
+    title: 'AI Recipe Generator',
     tags: ['react', 'ai', 'mcp', 'typescript'],
     categories: ['travel'],
     description:
-      'Smart Headphones AI is a platform that allows you to search for headphones and get recommendations based on your preferences.',
-    shortDescription: 'Search for headphones and get recommendations.',
+      'AI Recipe Generator is a platform that allows you to generate recipes based on your preferences.',
+    shortDescription: 'Generate recipes based on your preferences.',
     date: '2023-08-05',
-    url: 'https://my-smart-headphones-ai-25.vercel.app/',
+    url: 'https://ai-recipe-generator-nine.vercel.app/',
     published: true,
-    image: '/images/smart-headphones-ai.png',
+    image: '/images/ai-recipe-generator.png',
     gallery: [],
   },
   {

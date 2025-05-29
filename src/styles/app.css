@@ -1,5 +1,10 @@
 @import "tailwindcss" source("../");
 
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-purple-accent: oklch(0.709 0.1592 293.54);
+}
+
 @theme inline {
   --animate-shine: shine var(--duration) infinite linear;
  

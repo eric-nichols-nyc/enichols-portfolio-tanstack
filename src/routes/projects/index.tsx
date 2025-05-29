@@ -16,7 +16,7 @@ function ProjectsIndex() {
         <h1 className="text-3xl font-bold text-white">Projects</h1>
       </div>
       <div className="p-4">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
           {projects.map((project) => (
             <li key={project.id}>
               <div className="relative fade-in">

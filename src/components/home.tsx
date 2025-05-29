@@ -37,7 +37,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 relative overflow-hidden ">
          <div className="relative flex size-full items-center justify-center overflow-hidden">
-      <IconCloud images={images} />
+
     </div>
       {/* Hero Section with ShineBorder */}
       <motion.section
@@ -83,7 +83,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </motion.section>
-
+      <div className="flex items-center justify-center">
+        <IconCloud images={images} />
+      </div>
       {/* About Section */}
       <motion.section
         className="w-full max-w-2xl mb-10"
@@ -91,16 +93,6 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 1.1, ease: "easeOut" }}
       >
-        <Card>
-          <CardHeader>
-            <CardTitle>About Me</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              I am a web developer with a passion for building beautiful, performant, and accessible web applications. With experience across the stack, I love working with React, TypeScript, Node.js, and modern CSS frameworks. I enjoy collaborating with teams and turning ideas into reality.
-            </p>
-          </CardContent>
-        </Card>
       </motion.section>
     </div>
   );
