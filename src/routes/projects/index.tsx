@@ -3,6 +3,7 @@ import projects from '@/data/projects'
 import ContentContainer from '@/components/content-container'
 import { Card } from '@/components/ui/card'
 import ProjectCard from '@/components/project-card'
+import { ShineBorder } from '@/components/ui/shine-border'
 
 export const Route = createFileRoute('/projects/')({
   component: ProjectsIndex,
@@ -15,10 +16,13 @@ function ProjectsIndex() {
         <h1 className="text-3xl font-bold text-white">Projects</h1>
       </div>
       <div className="p-4">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((project) => (
             <li key={project.id}>
-              <ProjectCard project={project} />
+              <div className="relative fade-in">
+                <ShineBorder borderWidth={2} duration={10} shineColor={["#a78bfa", "#f472b6", "#38bdf8"]} />
+                <ProjectCard project={project} />
+              </div>
             </li>
           ))}
         </ul>

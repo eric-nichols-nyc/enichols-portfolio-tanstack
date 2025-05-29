@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     id: 'x2j9v7lm',
     title: 'MoodFlix',
-    tags: ['collaboration', 'websocket', 'typescript'],
+    tags: ['ai', 'nextjs', 'typescript'],
     categories: ['web'],
     description:
       'MoodFlix is your personal movie recommendation engine that suggests films based on your current mood. Whether you\'re feeling energetic, relaxed, or somewhere in between, we\'ve got the perfect movie for you.',
@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     id: 'q4w8e1rt',
     title: 'Audiograph',
-    tags: ['fitness', 'mobile', 'react-native'],
+    tags: ['nextjs', 'analytics', 'PostgreSQL', 'typescript'],
     categories: ['health'],
     description:
       'Audiograph is a platform that allows you to upload your audio files and get a summary of the content. It uses AI to transcribe the audio and then summarizes the content.',
@@ -44,7 +44,7 @@ const projects: Project[] = [
   {
     id: 'ai-taskmaster',
     title: 'Ai Taskmaster',
-    tags: ['ai', 'aws', 'postgres'],
+    tags: ['ai', 'microfrontend', 'postgres', 'typescript'],
     categories: ['ai'],
     description:
       'Ai Taskmaster is a platform that allows you to create and manage your tasks with AI. It uses AI to generate tasks and then allows you to manage them.',
@@ -58,7 +58,7 @@ const projects: Project[] = [
   {
     id: 'trellnode',
     title: 'Trellnode',
-    tags: ['api', 'ai', 'aws', 'postgres'],
+    tags: ['api', 'fullstack', 'NoSQL', 'typescript'],
     categories: ['ai'],
     description:
       'Trellnode is a platform that allows you to create and manage your tasks. It uses AI to generate tasks and then allows you to manage them.',
@@ -72,7 +72,7 @@ const projects: Project[] = [
   {
     id: 'smart-headphones-ai',
     title: 'smart-headphones-ai',
-    tags: ['travel', 'ai', 'recommendations'],
+    tags: ['react', 'ai', 'mcp', 'typescript'],
     categories: ['travel'],
     description:
       'Smart Headphones AI is a platform that allows you to search for headphones and get recommendations based on your preferences.',
@@ -86,7 +86,7 @@ const projects: Project[] = [
   {
     id: 'ai-mockmaster',
     title: 'AI Mockmaster',
-    tags: ['marketplace', 'art', 'community'],
+    tags: ['ai', 'nextjs', 'fullstack'],
     categories: ['marketplace'],
     description:
       'Ai Mockmaster is a platform that allows you to practice mock interviews with AI-driven feedback.',

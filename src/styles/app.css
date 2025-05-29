@@ -24,6 +24,20 @@
   background-color: #ffffff1a;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 * {
     @apply border-gray-200 dark:border-gray-800;

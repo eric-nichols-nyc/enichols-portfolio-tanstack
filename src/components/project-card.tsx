@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <div className="bg-[#10131a] border border-[#232225] rounded-xl p-6 flex flex-col gap-4 shadow-sm min-h-[400px]">
+    <div className="bg-[#10131a] border border-[#232225] rounded-xl p-6 flex flex-col gap-4 shadow-sm min-h-[490px]">
       <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
       {/* <div className="w-full aspect-video rounded-lg overflow-hidden mb-2">
         <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
