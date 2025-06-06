@@ -57,7 +57,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         <main className="flex min-h-screen">
           <Sidebar />
-          <div className="flex-1 border border-red-500">
+          <div className="flex-grow border border-red-500">
             {children}
           </div>
         </main>

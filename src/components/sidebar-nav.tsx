@@ -32,6 +32,12 @@ export default function Sidebar() {
             <span className="text-lg font-semibold">Home</span>
           </Link>
           <Link
+            to="/tech"
+            className={`px-5 py-2 rounded ${active("/tech")}`}
+          >
+            <span className="text-lg font-semibold">Tech</span>
+          </Link>
+          <Link
             to="/experience"
             className={`px-5 py-2 rounded ${active("/experience")}`}
           >

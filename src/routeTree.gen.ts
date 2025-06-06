@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TechImport } from './routes/tech'
 import { Route as ExperienceImport } from './routes/experience'
 import { Route as ContactImport } from './routes/contact'
 import { Route as PathlessLayoutImport } from './routes/_pathlessLayout'
@@ -19,6 +20,12 @@ import { Route as ProjectsIndexImport } from './routes/projects/index'
 import { Route as ProjectsProjectIdImport } from './routes/projects/$projectId'
 
 // Create/Update Routes
+
+const TechRoute = TechImport.update({
+  id: '/tech',
+  path: '/tech',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ExperienceRoute = ExperienceImport.update({
   id: '/experience',
@@ -87,6 +94,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienceImport
       parentRoute: typeof rootRoute
     }
+    '/tech': {
+      id: '/tech'
+      path: '/tech'
+      fullPath: '/tech'
+      preLoaderRoute: typeof TechImport
+      parentRoute: typeof rootRoute
+    }
     '/projects/$projectId': {
       id: '/projects/$projectId'
       path: '/projects/$projectId'
@@ -111,6 +125,7 @@ export interface FileRoutesByFullPath {
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -120,6 +135,7 @@ export interface FileRoutesByTo {
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -130,6 +146,7 @@ export interface FileRoutesById {
   '/_pathlessLayout': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -141,6 +158,7 @@ export interface FileRouteTypes {
     | ''
     | '/contact'
     | '/experience'
+    | '/tech'
     | '/projects/$projectId'
     | '/projects'
   fileRoutesByTo: FileRoutesByTo
@@ -149,6 +167,7 @@ export interface FileRouteTypes {
     | ''
     | '/contact'
     | '/experience'
+    | '/tech'
     | '/projects/$projectId'
     | '/projects'
   id:
@@ -157,6 +176,7 @@ export interface FileRouteTypes {
     | '/_pathlessLayout'
     | '/contact'
     | '/experience'
+    | '/tech'
     | '/projects/$projectId'
     | '/projects/'
   fileRoutesById: FileRoutesById
@@ -167,6 +187,7 @@ export interface RootRouteChildren {
   PathlessLayoutRoute: typeof PathlessLayoutRoute
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
+  TechRoute: typeof TechRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
@@ -176,6 +197,7 @@ const rootRouteChildren: RootRouteChildren = {
   PathlessLayoutRoute: PathlessLayoutRoute,
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
+  TechRoute: TechRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
@@ -194,6 +216,7 @@ export const routeTree = rootRoute
         "/_pathlessLayout",
         "/contact",
         "/experience",
+        "/tech",
         "/projects/$projectId",
         "/projects/"
       ]
@@ -209,6 +232,9 @@ export const routeTree = rootRoute
     },
     "/experience": {
       "filePath": "experience.tsx"
+    },
+    "/tech": {
+      "filePath": "tech.tsx"
     },
     "/projects/$projectId": {
       "filePath": "projects/$projectId.tsx"

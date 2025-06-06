@@ -3,7 +3,6 @@ import { GradientText } from "./ui/gradient-text";
 import { ShineBorder } from "./ui/shine-border";
 import { motion } from "framer-motion";
 import { IconCloud } from "@/components/icon-cloud";
-
 const slugs = [
   "typescript",
   "javascript",
