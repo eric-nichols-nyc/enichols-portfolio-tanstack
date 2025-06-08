@@ -1,10 +1,5 @@
 {
-  "Backend": [
-    { "name": "Node.js", "icon": "🟢", "level": "Expert", "years": "4 years exp" },
-    { "name": "Express", "icon": "⚡", "level": "Expert", "years": "3 years exp" },
-    { "name": "Django", "icon": "🎯", "level": "Intermediate", "years": "2 years exp" },
-    { "name": "GraphQL", "icon": "💎", "level": "Intermediate", "years": "2 years exp" }
-  ],
+
   "Frontend": [
     { "name": "React", "icon": "⚛️", "level": "Expert", "years": "4 years exp" },
     { "name": "Next.js", "icon": "▲", "level": "Expert", "years": "3 years exp" },
@@ -31,5 +26,10 @@
     { "name": "Vercel AI SDK", "icon": "▲", "level": "Expert", "years": "1 year exp" },
     { "name": "MCP", "icon": "💳", "level": "Intermediate", "years": "2 years exp" },
     { "name": "Vector Database", "icon": "🔍", "level": "Intermediate", "years": "1 year exp" }
+  ],
+  "Backend": [
+    { "name": "Node.js", "icon": "🟢", "level": "Expert", "years": "4 years exp" },
+    { "name": "Express", "icon": "⚡", "level": "Expert", "years": "3 years exp" },
+    { "name": "APIs", "icon": "💎", "level": "Expert", "years": "7 years exp" }
   ]
 } 

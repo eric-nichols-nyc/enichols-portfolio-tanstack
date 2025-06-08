@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import { z } from 'zod';
 import AnimatedSubmitButton from '@/components/animated-submit-button';
 import { ShineBorder } from '@/components/ui/shine-border';
+import Header from '@/components/header';
 
 const emailSchema = z.object({
   name: z.string().min(1),
@@ -83,6 +84,10 @@ export default function RouteComponent() {
   return (
     <ContentContainer>
       <div className="flex flex-col items-center pt-16 min-h-screen justify-center">
+        <Header
+          title="Contact Me"
+          subtitle="Let's connect! Drop a message or just say hi 👋"
+        />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

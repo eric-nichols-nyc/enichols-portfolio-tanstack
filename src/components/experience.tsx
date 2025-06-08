@@ -26,15 +26,6 @@ export default function CareerTimeline() {
 
   return (
     <div className="mx-auto px-4 py-12 max-w-5xl">
-      <motion.h1
-        className="text-3xl md:text-4xl font-bold mb-2 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <GradientText>My Developer Journey</GradientText>
-      </motion.h1>
-
       <motion.p
         className="text-muted-foreground text-center mb-12"
         initial={{ opacity: 0 }}
@@ -58,8 +49,9 @@ export default function CareerTimeline() {
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10 flex items-center justify-center">
