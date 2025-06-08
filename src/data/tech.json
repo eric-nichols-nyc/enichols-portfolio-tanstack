@@ -1,0 +1,35 @@
+{
+  "Backend": [
+    { "name": "Node.js", "icon": "🟢", "level": "Expert", "years": "4 years exp" },
+    { "name": "Express", "icon": "⚡", "level": "Expert", "years": "3 years exp" },
+    { "name": "Django", "icon": "🎯", "level": "Intermediate", "years": "2 years exp" },
+    { "name": "GraphQL", "icon": "💎", "level": "Intermediate", "years": "2 years exp" }
+  ],
+  "Frontend": [
+    { "name": "React", "icon": "⚛️", "level": "Expert", "years": "4 years exp" },
+    { "name": "Next.js", "icon": "▲", "level": "Expert", "years": "3 years exp" },
+    { "name": "TypeScript", "icon": "📘", "level": "Expert", "years": "4 years exp" },
+    { "name": "JavaScript", "icon": "📜", "level": "Expert", "years": "5 years exp" },
+    { "name": "Tailwind CSS", "icon": "🎨", "level": "Expert", "years": "3 years exp" }
+  ],
+  "Database": [
+    { "name": "PostgreSQL", "icon": "🐘", "level": "Expert", "years": "3 years exp" },
+    { "name": "MongoDB", "icon": "🍃", "level": "Expert", "years": "3 years exp" },
+    { "name": "MySQL", "icon": "🐬", "level": "Intermediate", "years": "3 years exp" },
+    { "name": "Redis", "icon": "🔴", "level": "Intermediate", "years": "2 years exp" },
+    { "name": "Prisma", "icon": "🔺", "level": "Expert", "years": "2 years exp" }
+  ],
+  "Cloud & DevOps": [
+    { "name": "AWS", "icon": "☁️", "level": "Intermediate", "years": "2 years exp" },
+    { "name": "Firebase", "icon": "🔥", "level": "Expert", "years": "3 years exp" },
+    { "name": "Docker", "icon": "🐳", "level": "Intermediate", "years": "2 years exp" },
+    { "name": "Git", "icon": "📦", "level": "Expert", "years": "5 years exp" }
+  ],
+  "AI & Integration": [
+    { "name": "OpenAI", "icon": "🤖", "level": "Expert", "years": "2 years exp" },
+    { "name": "LangChain", "icon": "🔗", "level": "Expert", "years": "1 year exp" },
+    { "name": "Vercel AI SDK", "icon": "▲", "level": "Expert", "years": "1 year exp" },
+    { "name": "MCP", "icon": "💳", "level": "Intermediate", "years": "2 years exp" },
+    { "name": "Vector Database", "icon": "🔍", "level": "Intermediate", "years": "1 year exp" }
+  ]
+} 

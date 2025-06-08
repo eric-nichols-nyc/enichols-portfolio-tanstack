@@ -5,42 +5,22 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ShineBorder } from "./ui/shine-border"
+import techData from "../data/tech.json"
 
-const technologies = {
-  Backend: [
-    { name: "Node.js", icon: "🟢", level: "Expert", years: "4 years exp" },
-    { name: "Express", icon: "⚡", level: "Expert", years: "3 years exp" },
-    { name: "Django", icon: "🎯", level: "Intermediate", years: "2 years exp" },
-    { name: "GraphQL", icon: "💎", level: "Intermediate", years: "2 years exp" },
-  ],
-  Frontend: [
-    { name: "React", icon: "⚛️", level: "Expert", years: "4 years exp" },
-    { name: "Next.js", icon: "▲", level: "Expert", years: "3 years exp" },
-    { name: "TypeScript", icon: "📘", level: "Expert", years: "4 years exp" },
-    { name: "JavaScript", icon: "📜", level: "Expert", years: "5 years exp" },
-    { name: "Tailwind CSS", icon: "🎨", level: "Expert", years: "3 years exp" },
-  ],
-  Database: [
-    { name: "PostgreSQL", icon: "🐘", level: "Expert", years: "3 years exp" },
-    { name: "MongoDB", icon: "🍃", level: "Expert", years: "3 years exp" },
-    { name: "MySQL", icon: "🐬", level: "Intermediate", years: "3 years exp" },
-    { name: "Redis", icon: "🔴", level: "Intermediate", years: "2 years exp" },
-    { name: "Prisma", icon: "🔺", level: "Expert", years: "2 years exp" },
-  ],
-  "Cloud & DevOps": [
-    { name: "AWS", icon: "☁️", level: "Intermediate", years: "2 years exp" },
-    { name: "Firebase", icon: "🔥", level: "Expert", years: "3 years exp" },
-    { name: "Docker", icon: "🐳", level: "Intermediate", years: "2 years exp" },
-    { name: "Git", icon: "📦", level: "Expert", years: "5 years exp" },
-  ],
-  "AI & Integration": [
-    { name: "OpenAI", icon: "🤖", level: "Expert", years: "2 years exp" },
-    { name: "LangChain", icon: "🔗", level: "Expert", years: "1 year exp" },
-    { name: "Vercel AI SDK", icon: "▲", level: "Expert", years: "1 year exp" },
-    { name: "MCP", icon: "💳", level: "Intermediate", years: "2 years exp" },
-    { name: "Vector Database", icon: "🔍", level: "Intermediate", years: "1 year exp" },
-  ],
+// Define the type for a technology
+interface Technology {
+  name: string;
+  icon: string;
+  level: string;
+  years: string;
 }
+
+// Define the type for the technologies object
+interface Technologies {
+  [category: string]: Technology[];
+}
+
+const technologies = techData as Technologies;
 
 export default function Component() {
   const [activeFilter, setActiveFilter] = useState("All")
@@ -90,7 +70,7 @@ export default function Component() {
             <div key={category}>
               <h2 className="text-2xl font-semibold mb-6 text-white">{category}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {techs.map((tech) => (
+                {(techs as Technology[]).map((tech) => (
                   <Card key={tech.name} className="relative bg-slate-800 border-slate-700 hover:bg-slate-750 transition-colors">
                     <ShineBorder borderWidth={2} duration={10} shineColor={["#a78bfa", "#f472b6", "#38bdf8"]} />
                     <CardContent className="p-4 text-center">
