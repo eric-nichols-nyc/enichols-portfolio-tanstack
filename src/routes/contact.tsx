@@ -83,7 +83,7 @@ export default function RouteComponent() {
   };
   return (
     <ContentContainer>
-      <div className="flex flex-col items-center pt-16 min-h-screen justify-center">
+      <div className="flex flex-col items-center min-h-screen justify-center w-full">
         <Header
           title="Contact Me"
           subtitle="Let's connect! Drop a message or just say hi 👋"
