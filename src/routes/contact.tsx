@@ -92,23 +92,20 @@ export default function RouteComponent() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="w-full max-w-md bg-gradient-to-br from-[#19191b] via-[#232225] to-[#10131a] border-none shadow-2xl"
+          className="w-full max-w-md md:max-w-2xl lg:max-w-3xl bg-gradient-to-br from-[#19191b] via-[#232225] to-[#10131a] border-none shadow-2xl"
           // Card wrapper
         >
-          <Card className="relative">
+          <Card className="relative w-full">
             <ShineBorder
               borderWidth={2}
               duration={10}
               shineColor={['#a78bfa', '#f472b6', '#38bdf8']}
             />
             <CardHeader className="text-center pb-2">
-              <CardTitle className="text-3xl font-bold text-[#b983ff]">Contact Me</CardTitle>
+              <CardTitle className="text-3xl font-bold text-[#b983ff]">Let's Work Together</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="mb-6">
-                <div className="text-xs text-muted-foreground mb-4">
-                  Have something to discuss? Send me a message and let's talk.
-                </div>
                 {generalError && <div className="text-red-500 text-sm mb-2">{generalError}</div>}
                 <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4 p-4 w-full">
                   <div className="flex flex-col gap-2">

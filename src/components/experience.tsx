@@ -26,15 +26,6 @@ export default function CareerTimeline() {
 
   return (
     <div className="mx-auto px-4 py-12 max-w-5xl">
-      <motion.p
-        className="text-muted-foreground text-center mb-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        My journey through code, caffeine, and creativity
-      </motion.p>
-
       <div className="relative">
         {/* Timeline line */}
         <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-primary-20 z-0"></div>
