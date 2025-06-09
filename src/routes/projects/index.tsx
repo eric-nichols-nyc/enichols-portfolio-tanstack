@@ -18,7 +18,8 @@ function ProjectsIndex() {
       <div className="flex flex-col w-full justify-center items-center">
         <Header
           title="Featured Projects"
-          subtitle="A showcase of things I've built, tinkered, and loved 💡✨"
+          subtitle="Showcasing AI-enhanced development projects that demonstrate modern architecture,
+          innovative solutions, and real-world impact.✨"
         />
         {/* <div className="p-4">
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Play, Code, Zap, Users, TrendingUp, Calendar, Kanban, BarChart3, Brain, MessageSquare, FileText, HelpCircle, ChefHat, List, LucideIcon } from 'lucide-react';
+import { ShineBorder } from './ui/shine-border';
 
 // Type definitions
 interface ProjectMetric {
@@ -70,8 +71,8 @@ const ProjectShowcase: React.FC = () => {
         { label: 'API Calls Daily', value: '200+' },
         { label: 'Response Time', value: '<2s' }
       ],
-      demoUrl: '#',
-      githubUrl: '#',
+      demoUrl: 'https://audiograph.vercel.app/',
+      githubUrl: 'https://github.com/eric-nichols-nyc/audiograph',
       image: '/api/placeholder/600/400',
       badges: ['Full Stack', 'API Integration', 'Real-time Data'],
       highlights: [
@@ -102,9 +103,9 @@ const ProjectShowcase: React.FC = () => {
         { label: 'Code Reuse', value: '85%' },
         { label: 'Bundle Size', value: 'Optimized' }
       ],
-      demoUrl: '#',
-      githubUrl: '#',
-      image: '/api/placeholder/600/400',
+      demoUrl: 'https://ai-taskwizard-host.vercel.app/',
+      image: '/images/taskwizard.png',
+      githubUrl: 'https://github.com/eric-nichols-nyc/ai-taskmaster',
       badges: ['Microfrontend', 'Monorepo', 'Enterprise Architecture'],
       highlights: [
         'Designed scalable microfrontend architecture',
@@ -197,10 +198,14 @@ const ProjectShowcase: React.FC = () => {
   const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) => {
     if (featured && isFeaturedProject(project)) {
       return (
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-          {/* Project Header */}
-          <div className="relative">
-            <div className="h-64 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+        <div className="bg-[#10131a] relative rounded-lg shadow-lg mb-8">
+              <ShineBorder
+                    borderWidth={2}
+                    duration={10}
+                    shineColor={['#a78bfa', '#f472b6', '#38bdf8']}
+                  />
+          <div className="overflow-hidden">
+            <div className="h-64 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_var(--tw-gradient-to)_100%)] from-black to-gray-900 flex items-center justify-center">
               <div className="text-center text-white">
                 <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
                 <p className="text-xl opacity-90">{project.subtitle}</p>
@@ -217,7 +222,7 @@ const ProjectShowcase: React.FC = () => {
 
           <div className="p-8">
             {/* Description */}
-            <p className="text-gray-700 text-lg mb-6">{project.description}</p>
+            <p className="text-gray-500 text-lg mb-6">{project.description}</p>
 
             {/* Problem & Solution */}
             <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -250,7 +255,7 @@ const ProjectShowcase: React.FC = () => {
                 {project.features.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700 text-sm">{feature}</span>
+                    <span className="text-gray-500 text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -276,7 +281,7 @@ const ProjectShowcase: React.FC = () => {
                 {project.highlights.map((highlight: string, index: number) => (
                   <div key={index} className="flex items-center space-x-2">
                     <Zap className="w-4 h-4 text-yellow-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{highlight}</span>
+                    <span className="text-gray-500 text-sm">{highlight}</span>
                   </div>
                 ))}
               </div>
@@ -328,13 +333,13 @@ const ProjectShowcase: React.FC = () => {
             </span>
           </div>
 
-          <p className="text-gray-700 text-sm mb-4">{aiProject.description}</p>
+          <p className="500text-gray- text-sm mb-4">{aiProject.description}</p>
 
           {/* Tech Stack */}
           <div className="mb-4">
             <div className="flex flex-wrap gap-1">
               {aiProject.tech.slice(0, 3).map((tech: string, index: number) => (
-                <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                <span key={index} className="bg-gray-100 text-gray-500 px-2 py-1 rounded text-xs">
                   {tech}
                 </span>
               ))}
@@ -388,15 +393,6 @@ const ProjectShowcase: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Showcasing AI-enhanced development projects that demonstrate modern architecture, 
-          innovative solutions, and real-world impact.
-        </p>
-      </div>
-
       {/* Navigation Tabs */}
       <div className="flex justify-center mb-8">
         <div className="bg-gray-100 rounded-lg p-1">
@@ -453,7 +449,7 @@ const ProjectShowcase: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Interested in AI-Enhanced Development?
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-gray-500 mb-6 max-w-2xl mx-auto">
           These projects demonstrate how AI tools can accelerate development while maintaining 
           high code quality and innovative solutions. Let's discuss how this approach can benefit your next project.
         </p>
@@ -461,7 +457,7 @@ const ProjectShowcase: React.FC = () => {
           <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
             Get In Touch
           </button>
-          <button className="bg-white text-gray-700 px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+          <button className="bg-white text-gray-500 px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
             View Resume
           </button>
         </div>

@@ -50,7 +50,7 @@ const projects: Project[] = [
       'Ai Taskmaster is a platform that allows you to create and manage your tasks with AI. It uses AI to generate tasks and then allows you to manage them.',
     shortDescription: 'Manage your tasks with AI.',
     date: '2023-07-22',
-    url: 'https://ai-taskmaster-dashboard.vercel.app/',
+    url: 'https://ai-taskmaster-host.vercel.app/',
     published: true,
     image: '/images/taskmaster.png',
     gallery: [],
