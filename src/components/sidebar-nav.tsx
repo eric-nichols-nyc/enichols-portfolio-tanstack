@@ -63,6 +63,13 @@ export default function Sidebar() {
         >
           <span className="text-lg font-semibold">Contact</span>
         </Link>
+        <Link
+          to="/feedback"
+          className={`px-5 py-2 rounded ${active("/feedback")}`}
+          onClick={() => isMobile && setOpen(false)}
+        >
+          <span className="text-lg font-semibold">Feedback</span>
+        </Link>
       </nav>
     </>
   );

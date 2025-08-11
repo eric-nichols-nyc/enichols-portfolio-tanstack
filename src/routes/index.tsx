@@ -5,6 +5,7 @@ import { createServerFn } from '@tanstack/react-start'
 import HomePage from '@/components/home'
 import ContentContainer from '@/components/content-container'
 import { useEffect, useState } from 'react'
+import FeedbackWidget from '@/components/feedback-widget'
 
 const visitCountFile = 'visit-count.txt'
 

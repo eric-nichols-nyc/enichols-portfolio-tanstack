@@ -9,6 +9,7 @@ import {
 
 import appCss from "@/styles/app.css?url"
 import Sidebar from "@/components/sidebar-nav"
+import FeedbackWidget from "@/components/feedback-widget"
 
 
 export const Route = createRootRoute({
@@ -61,6 +62,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             {children}
           </div>
         </main>
+        <FeedbackWidget />
         <Scripts />
       </body>
     </html>

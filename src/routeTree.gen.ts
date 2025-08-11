@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as TechImport } from './routes/tech'
+import { Route as FeedbackImport } from './routes/feedback'
 import { Route as ExperienceImport } from './routes/experience'
 import { Route as ContactImport } from './routes/contact'
 import { Route as PathlessLayoutImport } from './routes/_pathlessLayout'
@@ -24,6 +25,12 @@ import { Route as ProjectsProjectIdImport } from './routes/projects/$projectId'
 const TechRoute = TechImport.update({
   id: '/tech',
   path: '/tech',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FeedbackRoute = FeedbackImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -94,6 +101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienceImport
       parentRoute: typeof rootRoute
     }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackImport
+      parentRoute: typeof rootRoute
+    }
     '/tech': {
       id: '/tech'
       path: '/tech'
@@ -125,6 +139,7 @@ export interface FileRoutesByFullPath {
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/feedback': typeof FeedbackRoute
   '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
@@ -135,6 +150,7 @@ export interface FileRoutesByTo {
   '': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/feedback': typeof FeedbackRoute
   '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
@@ -146,6 +162,7 @@ export interface FileRoutesById {
   '/_pathlessLayout': typeof PathlessLayoutRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
+  '/feedback': typeof FeedbackRoute
   '/tech': typeof TechRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -158,6 +175,7 @@ export interface FileRouteTypes {
     | ''
     | '/contact'
     | '/experience'
+    | '/feedback'
     | '/tech'
     | '/projects/$projectId'
     | '/projects'
@@ -167,6 +185,7 @@ export interface FileRouteTypes {
     | ''
     | '/contact'
     | '/experience'
+    | '/feedback'
     | '/tech'
     | '/projects/$projectId'
     | '/projects'
@@ -176,6 +195,7 @@ export interface FileRouteTypes {
     | '/_pathlessLayout'
     | '/contact'
     | '/experience'
+    | '/feedback'
     | '/tech'
     | '/projects/$projectId'
     | '/projects/'
@@ -187,6 +207,7 @@ export interface RootRouteChildren {
   PathlessLayoutRoute: typeof PathlessLayoutRoute
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
+  FeedbackRoute: typeof FeedbackRoute
   TechRoute: typeof TechRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -197,6 +218,7 @@ const rootRouteChildren: RootRouteChildren = {
   PathlessLayoutRoute: PathlessLayoutRoute,
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
+  FeedbackRoute: FeedbackRoute,
   TechRoute: TechRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
@@ -216,6 +238,7 @@ export const routeTree = rootRoute
         "/_pathlessLayout",
         "/contact",
         "/experience",
+        "/feedback",
         "/tech",
         "/projects/$projectId",
         "/projects/"
@@ -232,6 +255,9 @@ export const routeTree = rootRoute
     },
     "/experience": {
       "filePath": "experience.tsx"
+    },
+    "/feedback": {
+      "filePath": "feedback.tsx"
     },
     "/tech": {
       "filePath": "tech.tsx"
