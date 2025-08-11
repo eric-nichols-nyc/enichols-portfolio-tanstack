@@ -289,7 +289,7 @@ const ProjectShowcase: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex space-x-4">
-              <a 
+              <a
                 href={project.demoUrl}
                 className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
                 target="_blank"
@@ -298,7 +298,7 @@ const ProjectShowcase: React.FC = () => {
                 <Play className="w-4 h-4" />
                 <span>Live Demo</span>
               </a>
-              <a 
+              <a
                 href={project.githubUrl}
                 className="flex items-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"
                 target="_blank"
@@ -363,7 +363,7 @@ const ProjectShowcase: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex space-x-2">
-            <a 
+            <a
               href={aiProject.demoUrl}
               className="flex items-center space-x-1 bg-blue-600 text-white px-3 py-2 rounded text-sm hover:bg-blue-700 transition-colors flex-1 justify-center"
               target="_blank"
@@ -372,7 +372,7 @@ const ProjectShowcase: React.FC = () => {
               <ExternalLink className="w-3 h-3" />
               <span>Demo</span>
             </a>
-            <a 
+            <a
               href={aiProject.githubUrl}
               className="flex items-center space-x-1 bg-gray-600 text-white px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex-1 justify-center"
               target="_blank"
@@ -394,13 +394,13 @@ const ProjectShowcase: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto p-6">
       {/* Navigation Tabs */}
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-8 hidden">
         <div className="bg-gray-100 rounded-lg p-1">
           <button
             onClick={() => handleTabChange('featured')}
             className={`px-6 py-2 rounded-md font-medium transition-colors ${
-              activeTab === 'featured' 
-                ? 'bg-white text-gray-900 shadow-sm' 
+              activeTab === 'featured'
+                ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -409,8 +409,8 @@ const ProjectShowcase: React.FC = () => {
           <button
             onClick={() => handleTabChange('ai')}
             className={`px-6 py-2 rounded-md font-medium transition-colors ${
-              activeTab === 'ai' 
-                ? 'bg-white text-gray-900 shadow-sm' 
+              activeTab === 'ai'
+                ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -445,12 +445,12 @@ const ProjectShowcase: React.FC = () => {
       )}
 
       {/* CTA Section */}
-      <div className="mt-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
+      <div className="mt-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 hidden">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Interested in AI-Enhanced Development?
         </h2>
         <p className="text-gray-500 mb-6 max-w-2xl mx-auto">
-          These projects demonstrate how AI tools can accelerate development while maintaining 
+          These projects demonstrate how AI tools can accelerate development while maintaining
           high code quality and innovative solutions. Let's discuss how this approach can benefit your next project.
         </p>
         <div className="flex justify-center space-x-4">
