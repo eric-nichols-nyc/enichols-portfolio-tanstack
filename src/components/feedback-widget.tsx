@@ -29,7 +29,7 @@ export default function FeedbackWidget() {
 
     const feedbackData = {
       name: (formData.get('name') as string)?.trim() || '',
-      email: (formData.get('email') as string)?.trim() || '',
+      email: '',
       message: (formData.get('message') as string)?.trim() || '',
     }
 
@@ -109,17 +109,6 @@ export default function FeedbackWidget() {
                       id="name" 
                       name="name" 
                       placeholder="Your name" 
-                      className="mt-1 bg-[#232225] border border-[#a78bfa] focus:border-[#b983ff] focus:ring-2 focus:ring-[#b983ff] text-white placeholder:text-[#b3b0b7]" 
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email" className="text-white">Email <span className="text-[#b3b0b7] text-sm">(optional)</span></Label>
-                    <Input 
-                      id="email" 
-                      name="email" 
-                      type="email" 
-                      placeholder="your.email@example.com" 
                       className="mt-1 bg-[#232225] border border-[#a78bfa] focus:border-[#b983ff] focus:ring-2 focus:ring-[#b983ff] text-white placeholder:text-[#b3b0b7]" 
                     />
                   </div>
