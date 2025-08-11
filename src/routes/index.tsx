@@ -1,42 +1,64 @@
-// app/routes/index.tsx
+// src/routes/index.tsx
 import * as fs from 'node:fs'
-import { createFileRoute, useRouter } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import HomePage from '@/components/home'
 import ContentContainer from '@/components/content-container'
-const filePath = 'count.txt'
+import { useEffect, useState } from 'react'
 
-async function readCount() {
-  return parseInt(
-    await fs.promises.readFile(filePath, 'utf-8').catch(() => '0'),
-  )
+const visitCountFile = 'visit-count.txt'
+
+async function readVisitCount() {
+  try {
+    const content = await fs.promises.readFile(visitCountFile, 'utf-8')
+    return parseInt(content) || 0
+  } catch {
+    return 0
+  }
 }
 
-const getCount = createServerFn({
+export const getVisitCount = createServerFn({
   method: 'GET',
-}).handler(() => {
-  return readCount()
+}).handler(async () => {
+  return await readVisitCount()
 })
 
-const updateCount = createServerFn({ method: 'POST' })
-  .validator((d: number) => d)
-  .handler(async ({ data }) => {
-    const count = await readCount()
-    await fs.promises.writeFile(filePath, `${count + data}`)
-  })
+export const incrementVisitCount = createServerFn({
+  method: 'POST',
+}).handler(async () => {
+  const count = await readVisitCount()
+  const newCount = count + 1
+  await fs.promises.writeFile(visitCountFile, `${newCount}`)
+  return newCount
+})
 
 export const Route = createFileRoute('/')({
   component: Home,
-  loader: async () => await getCount(),
+  loader: async () => {
+    return await getVisitCount()
+  },
 })
 
 function Home() {
-  const router = useRouter()
-  const state = Route.useLoaderData()
+  const initialCount = Route.useLoaderData()
+  const [visitCount, setVisitCount] = useState<number>(initialCount)
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisited')
+
+    if (!hasVisited) {
+      incrementVisitCount().then(newCount => {
+        setVisitCount(newCount)
+      }).catch(error => {
+        console.error('Failed to increment visit count:', error)
+      })
+      sessionStorage.setItem('hasVisited', 'true')
+    }
+  }, [])
 
   return (
     <ContentContainer>
-      <HomePage />
+      <HomePage visitCount={visitCount} />
     </ContentContainer>
   )
 }
