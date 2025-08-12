@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 import { useMediaQuery } from "../hooks/use-media-query";
+import { Button } from "./ui/button";
 
 export default function Sidebar() {
   const router = useRouterState();
@@ -18,11 +19,11 @@ export default function Sidebar() {
       {/* Avatar and Name */}
       <div className="flex flex-col items-center gap-2 mb-8">
         <Link to="/" className="block">
-          <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#39383d] via-[#232225] to-purple-accent flex items-center justify-center text-4xl font-bold text-[#b3b0b7] mb-2 shadow-lg transition-transform duration-300 hover:scale-105 relative overflow-hidden group">
+            <Button className="w-24 h-24 rounded-full cursor-pointer bg-gradient-to-tr from-[#39383d] via-[#232225] to-purple-accent flex items-center justify-center text-4xl font-bold text-[#b3b0b7] mb-2 shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-gradient-to-tr hover:from-[#232225] hover:via-[#39383d] relative overflow-hidden group">
             <span className="z-10">EN</span>
             {/* Glowing ring animation */}
             <span className="absolute inset-0 rounded-full border-4 border-purple-accent opacity-30 animate-pulse pointer-events-none"></span>
-          </div>
+          </Button>
         </Link>
         <div className="text-2xl font-bold">Eric Nichols</div>
         <div className="text-base font-medium text-[#b3b0b7]">Full Stack Developer</div>

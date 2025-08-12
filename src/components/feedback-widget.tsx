@@ -70,10 +70,10 @@ export default function FeedbackWidget() {
 
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className={`h-14 w-14 rounded-full shadow-lg transition-all ${
+          className={`h-14 w-14 rounded-full cursor-pointer shadow-lg transition-all ${
             isOpen
               ? "bg-[#1a1a1c] hover:bg-[#232225] text-white"
-              : "bg-gradient-to-r from-[#4c1d95] to-[#581c87] hover:from-[#581c87] hover:to-[#4c1d95] text-white"
+              : "bg-gradient-to-tr from-[#39383d] via-[#232225] to-purple-accent hover:from-[#232225] hover:via-[#39383d] hover:to-[#4c1d95] text-white"
           }`}
           aria-label="Open feedback form"
         >
