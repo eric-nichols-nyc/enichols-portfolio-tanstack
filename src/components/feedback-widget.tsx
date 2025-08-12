@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useServerFn } from "@tanstack/react-start"
 import { submitFeedback } from "@/lib/feedback"
+import { ShineBorder } from "@/components/ui/shine-border"
 
 
 export default function FeedbackWidget() {
@@ -66,15 +67,22 @@ export default function FeedbackWidget() {
     <>
       {/* Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
+
         <Button
           onClick={() => setIsOpen(!isOpen)}
           className={`h-14 w-14 rounded-full shadow-lg transition-all ${
-            isOpen 
-              ? "bg-[#232225] hover:bg-[#2d2d31] text-white" 
-              : "bg-gradient-to-r from-[#a78bfa] to-[#b983ff] hover:from-[#b983ff] hover:to-[#a78bfa] text-white"
+            isOpen
+              ? "bg-[#1a1a1c] hover:bg-[#232225] text-white"
+              : "bg-gradient-to-r from-[#4c1d95] to-[#581c87] hover:from-[#581c87] hover:to-[#4c1d95] text-white"
           }`}
           aria-label="Open feedback form"
         >
+             <ShineBorder
+            borderWidth={3}
+            duration={8}
+            shineColor={['#6366f1', '#a21caf', '#f472b6']}
+            className="z-10"
+          />
           {isOpen ? <X className="h-6 w-6" /> : <MessageSquarePlus className="h-6 w-6" />}
         </Button>
       </div>
@@ -105,11 +113,11 @@ export default function FeedbackWidget() {
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="name" className="text-white">Name <span className="text-[#b3b0b7] text-sm">(optional)</span></Label>
-                    <Input 
-                      id="name" 
-                      name="name" 
-                      placeholder="Your name" 
-                      className="mt-1 bg-[#232225] border border-[#a78bfa] focus:border-[#b983ff] focus:ring-2 focus:ring-[#b983ff] text-white placeholder:text-[#b3b0b7]" 
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                      className="mt-1 bg-[#232225] border border-[#a78bfa] focus:border-[#b983ff] focus:ring-2 focus:ring-[#b983ff] text-white placeholder:text-[#b3b0b7]"
                     />
                   </div>
 
@@ -133,15 +141,15 @@ export default function FeedbackWidget() {
                           type="button"
                           onClick={() => setRating(starValue)}
                           className={`h-8 w-8 mx-1 flex items-center justify-center transition-all hover:scale-110 ${
-                            rating && starValue <= rating 
-                              ? "text-[#b983ff]" 
+                            rating && starValue <= rating
+                              ? "text-[#b983ff]"
                               : "text-[#b3b0b7] hover:text-[#a78bfa]"
                           }`}
                         >
-                          <Star 
+                          <Star
                             className={`h-5 w-5 ${
                               rating && starValue <= rating ? "fill-current" : ""
-                            }`} 
+                            }`}
                           />
                         </button>
                       ))}
@@ -155,9 +163,9 @@ export default function FeedbackWidget() {
                     </div>
                   )}
 
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-to-r from-[#a78bfa] to-[#b983ff] hover:from-[#b983ff] hover:to-[#a78bfa] text-white border-0 shadow-lg transition-all" 
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#a78bfa] to-[#b983ff] hover:from-[#b983ff] hover:to-[#a78bfa] text-white border-0 shadow-lg transition-all"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
