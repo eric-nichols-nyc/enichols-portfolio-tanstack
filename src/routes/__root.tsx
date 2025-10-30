@@ -40,7 +40,11 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/images/og-image.png',
+        content: 'https://enichols-dev-tanstack.vercel.app/images/og-image.png',
+      },
+      {
+        property: 'og:url',
+        content: 'https://enichols.dev',
       },
       {
         property: 'og:type',
@@ -61,7 +65,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: '/images/og-image.png',
+        content: 'https://enichols-dev-tanstack.vercel.app/images/og-image.png',
       },
     ],
     links: [
