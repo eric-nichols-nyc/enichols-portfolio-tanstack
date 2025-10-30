@@ -25,6 +25,44 @@ export const Route = createRootRoute({
       {
         title: 'Eric Nichols Developer',
       },
+      {
+        name: 'description',
+        content: 'Portfolio of Eric Nichols - Full Stack Developer',
+      },
+      // Open Graph meta tags
+      {
+        property: 'og:title',
+        content: 'Eric Nichols Developer',
+      },
+      {
+        property: 'og:description',
+        content: 'Portfolio of Eric Nichols - Full Stack Developer',
+      },
+      {
+        property: 'og:image',
+        content: '/og-image.png',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      // Twitter Card meta tags
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: 'Eric Nichols Developer',
+      },
+      {
+        name: 'twitter:description',
+        content: 'Portfolio of Eric Nichols - Full Stack Developer',
+      },
+      {
+        name: 'twitter:image',
+        content: '/og-image.png',
+      },
     ],
     links: [
       {
