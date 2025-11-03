@@ -205,13 +205,13 @@ const ProjectShowcase: React.FC = () => {
                     shineColor={['#a78bfa', '#f472b6', '#38bdf8']}
                   />
           <div className="overflow-hidden">
-            <div className="h-64 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_var(--tw-gradient-to)_100%)] from-black to-gray-900 flex items-center justify-center">
-              <div className="text-center text-white">
-                <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-                <p className="text-xl opacity-90">{project.subtitle}</p>
+            <div className="h-40 md:h-64 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_var(--tw-gradient-to)_100%)] from-black to-gray-900 flex items-center justify-center">
+              <div className="text-center text-white px-4">
+                <h3 className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">{project.title}</h3>
+                <p className="text-lg md:text-xl opacity-90">{project.subtitle}</p>
               </div>
             </div>
-            <div className="absolute top-4 right-4 flex space-x-2">
+            <div className="absolute top-4 right-4 hidden md:flex space-x-2">
               {project.badges.map((badge: string, index: number) => (
                 <span key={index} className="bg-white/20 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
                   {badge}
@@ -220,12 +220,12 @@ const ProjectShowcase: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-8">
+          <div className="p-4 md:p-8">
             {/* Description */}
             <p className="text-gray-500 text-lg mb-6">{project.description}</p>
 
             {/* Problem & Solution */}
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Problem</h4>
                 <p className="text-gray-600 text-sm">{project.problem}</p>
@@ -234,7 +234,7 @@ const ProjectShowcase: React.FC = () => {
                 <h4 className="font-semibold text-gray-900 mb-2">Solution</h4>
                 <p className="text-gray-600 text-sm">{project.solution}</p>
               </div>
-            </div>
+            </div> */}
 
             {/* Tech Stack */}
             <div className="mb-6">
@@ -288,10 +288,10 @@ const ProjectShowcase: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center">
               <a
                 href={project.demoUrl}
-                className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors w-1/2 md:w-auto"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -300,7 +300,7 @@ const ProjectShowcase: React.FC = () => {
               </a>
               <a
                 href={project.githubUrl}
-                className="flex items-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"
+                className="flex items-center justify-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors w-1/2 md:w-auto"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -317,7 +317,7 @@ const ProjectShowcase: React.FC = () => {
     const aiProject = project as AIProject;
     return (
       <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center space-x-3">
               <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
@@ -392,10 +392,10 @@ const ProjectShowcase: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-4 md:p-6">
       {/* Navigation Tabs */}
       <div className="flex justify-center mb-8 hidden">
-        <div className="bg-gray-100 rounded-lg p-1">
+        <div className="bg-gray-100 rounded-lg p-1 w-1/2 md:w-auto">
           <button
             onClick={() => handleTabChange('featured')}
             className={`px-6 py-2 rounded-md font-medium transition-colors ${
@@ -445,7 +445,7 @@ const ProjectShowcase: React.FC = () => {
       )}
 
       {/* CTA Section */}
-      <div className="mt-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 hidden">
+      <div className="mt-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 md:p-8 hidden">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Interested in AI-Enhanced Development?
         </h2>
