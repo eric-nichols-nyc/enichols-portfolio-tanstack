@@ -34,23 +34,6 @@ export default function HomePage({ visitCount }: { visitCount?: number }) {
   const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 relative overflow-hidden">
-      {/* Visit Count Badge - Centered beneath hero */}
-      {visitCount && (
-        <motion.div
-          className="flex justify-center mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.2, ease: 'easeOut' }}
-        >
-          <Badge
-            variant="outline"
-            className="bg-black/50 border-purple-500/30 text-purple-300 backdrop-blur-sm px-4 py-2 text-sm"
-          >
-            <Eye className="w-4 h-4" />
-            {visitCount.toLocaleString()} visits
-          </Badge>
-        </motion.div>
-      )}
       {/* Hero Section with ShineBorder */}
       <motion.section
         className="w-full max-w-2xl mb-12 text-center relative"
@@ -102,7 +85,7 @@ export default function HomePage({ visitCount }: { visitCount?: number }) {
         </div>
       </motion.section>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center w-full">
         <IconCloud images={images} />
       </div>
       {/* About Section */}

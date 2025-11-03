@@ -18,5 +18,8 @@ export default defineConfig({
         projects: ['./tsconfig.json'],
       }),
     ],
-  },
+    server: {
+      allowedHosts: ['.ngrok-free.app'],
+    },
+  } as any,
 })

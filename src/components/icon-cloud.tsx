@@ -41,6 +41,21 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   const rotationRef = useRef(rotation);
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
+  const [canvasSize, setCanvasSize] = useState(400);
+
+  // Handle responsive canvas size
+  useEffect(() => {
+    const updateCanvasSize = () => {
+      const width = window.innerWidth;
+      // Use 90% of viewport width on mobile, max 400px
+      const size = Math.min(400, width * 0.9);
+      setCanvasSize(size);
+    };
+
+    updateCanvasSize();
+    window.addEventListener('resize', updateCanvasSize);
+    return () => window.removeEventListener('resize', updateCanvasSize);
+  }, []);
 
   // Create icon canvases once when icons/images change
   useEffect(() => {
@@ -310,13 +325,13 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   return (
     <canvas
       ref={canvasRef}
-      width={400}
-      height={400}
+      width={canvasSize}
+      height={canvasSize}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className="rounded-lg"
+      className="rounded-lg max-w-full"
       aria-label="Interactive 3D Icon Cloud"
       role="img"
     />
