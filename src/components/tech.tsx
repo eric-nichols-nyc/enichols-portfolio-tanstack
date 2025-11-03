@@ -76,7 +76,7 @@ export default function Component() {
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <h2 className="text-2xl font-semibold mb-6 text-white">{category}</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {(techs as Technology[]).map((tech, idx) => (
                   <motion.div
                     key={tech.name}
